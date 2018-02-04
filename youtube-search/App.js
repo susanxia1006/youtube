@@ -32,7 +32,10 @@ export default class App extends Component {
         <Button
           buttonStyle={searchButton}
           title="Submit"
-          onPress={() => console.log(this.state.searchTerm)}
+          onPress={() => {
+            console.log(this.state.searchTerm);
+            console.log('button was pressed!');
+          }}
         />
       </View>
       {/*List of videos*/}
