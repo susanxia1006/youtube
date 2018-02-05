@@ -1,3 +1,4 @@
 import SearchBar from './SearchBar.js';
+import AppHeader from './AppHeader';
 
-export { SearchBar };
+export { SearchBar, AppHeader };
