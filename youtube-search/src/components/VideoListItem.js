@@ -1,11 +1,13 @@
 //stateless component of a VideoListItem
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import { WatchListButton } from './';
+
 
 const VideoListItem = (props) => {
   const snippet = props.video.snippet;
   const { imageStyle, containerStyle } = styles;
-  //console.log(snippet.thumbnails.medium.url);
+
   return (
     <View style={containerStyle}>
       <Image
@@ -15,6 +17,8 @@ const VideoListItem = (props) => {
       <Text>{snippet.title}</Text>
       <Text>{snippet.channelTitle}</Text>
       <Text>{snippet.description}</Text>
+      <WatchListButton videoId={props.video.id.videoId} />
+
     </View>
   );
 };
