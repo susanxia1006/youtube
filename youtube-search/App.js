@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import YTSearch from 'youtube-api-search';
-//import { Header } from 'react-native-elements';
-import { SearchBar, AppHeader } from './src/components';
+import { SearchBar, AppHeader, VideoList } from './src/components';
 
 
 const API_KEY = 'AIzaSyDYbQ5iDSAtWg1Xbwrr_HPMNWX9FuXII5A';
@@ -23,7 +22,6 @@ export default class App extends Component {
     this.setState({ loading: true });
     YTSearch({ key: API_KEY, term }, result => {
             this.setState({ videos: result });
-            console.log(result);
             this.setState({ loading: false });
         });
   };
@@ -38,7 +36,8 @@ export default class App extends Component {
           displayText={this.state.loading ? 'Loading...' : 'Submit'}
           // set to fill in the loading lag
         />
-      {/*List of videos*/}
+        <VideoList videos={this.state.videos} />
+
 
       </View>
     );
