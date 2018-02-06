@@ -24,11 +24,11 @@ class SearchBar extends Component {
         />
         <Button
           buttonStyle={searchButton}
-          title="Submit"
+          title={this.props.displayText}
           onPress={() => {
-            console.log(this.state.searchTerm);
-            console.log('button was pressed!');
+            this.props.search(this.state.searchTerm);
           }}
+
         />
       </View>
     );
