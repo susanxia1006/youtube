@@ -12,6 +12,9 @@ export default class App extends Component {
     loading: false
   };
 
+  componentDidMount() {
+    this.searchYT('Heidi Somers');
+  }
 
   onPressSearch = (term) => {
     console.log(term);
