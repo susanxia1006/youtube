@@ -8,6 +8,11 @@ import { Button } from 'react-native-elements';
 class SearchBar extends Component {
   state = { searchTerm: '' };
 
+  search = () => {
+    this.props.search(this.state.searchTerm);
+  };
+
+
   render() {
     const {
       searchContainer,
@@ -21,13 +26,12 @@ class SearchBar extends Component {
           style={searchText}
           onChangeText={searchInput => this.setState({ searchTerm: searchInput })}
           value={this.state.searchTerm}
+          onSubmitEditing={this.search}
         />
         <Button
           buttonStyle={searchButton}
           title={this.props.displayText}
-          onPress={() => {
-            this.props.search(this.state.searchTerm);
-          }}
+          onPress={this.search}
 
         />
       </View>
