@@ -1,5 +1,25 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+    "sdkVersion": "25.0.0",
+    "name": "youtube-search",
+    "version": "0.1.0",
+    "description": "A Youtube search application",
+    "slug": "youtube-search",
+    "primaryColor": "#E62117",
+    "packagerOpts": {
+      "assetExts": ["mp4","ttf"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.susanxia.youtubesearch",
+      "versionCode": 1,
+      "permissions": []
+
+    }
+
+
   }
 }
