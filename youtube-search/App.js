@@ -4,7 +4,7 @@ import YTSearch from 'youtube-api-search';
 import { SearchBar, AppHeader, VideoList } from './src/components';
 
 
-const API_KEY = 'AIzaSyDYbQ5iDSAtWg1Xbwrr_HPMNWX9FuXII5A';
+const apiKey = process.env.API_KEY;
 
 export default class App extends Component {
   state = {
@@ -12,9 +12,9 @@ export default class App extends Component {
     loading: false
   };
 
-  componentDidMount() {
-    this.searchYT('Heidi Somers');
-  }
+  // componentDidMount() {
+  //   this.searchYT('Heidi Somers');
+  // }
 
   onPressSearch = (term) => {
     console.log(term);
@@ -23,7 +23,7 @@ export default class App extends Component {
 
   searchYT = (term) => {
     this.setState({ loading: true });
-    YTSearch({ key: API_KEY, term }, result => {
+    YTSearch({ key: apiKey, term }, result => {
             this.setState({ videos: result });
             this.setState({ loading: false });
         });
